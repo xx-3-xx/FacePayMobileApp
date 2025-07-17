@@ -39,7 +39,7 @@ export default function Register() {
   }
 
   return (
-    <div style={{ backgroundColor: '#f5f5f5', minHeight: '100vh', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+    <div style={{ backgroundColor: '#ffffff', minHeight: '100vh', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
       {/* Header */}
       <div style={{ 
         display: 'flex', 
@@ -54,7 +54,7 @@ export default function Register() {
           style={{ 
             background: 'none', 
             border: 'none', 
-            color: '#333', 
+            color: '#000000', 
             fontSize: '16px', 
             cursor: 'pointer',
             padding: '8px'
@@ -65,7 +65,7 @@ export default function Register() {
         <h1 style={{ 
           fontSize: '18px', 
           fontWeight: '600',
-          color: '#333',
+          color: '#000000',
           margin: 0
         }}>
           Register
@@ -79,7 +79,7 @@ export default function Register() {
           <h2 style={{ 
             marginBottom: '8px', 
             textAlign: 'center',
-            color: '#333',
+            color: '#000000',
             fontSize: '24px',
             fontWeight: '600'
           }}>
@@ -95,7 +95,7 @@ export default function Register() {
           </p>
           
           <div style={{ 
-            backgroundColor: '#333', 
+            backgroundColor: '#000000', 
             borderRadius: '16px', 
             padding: '48px 24px', 
             textAlign: 'center',
@@ -137,7 +137,7 @@ export default function Register() {
                 onClick={handleFaceScan} 
                 style={{ 
                   backgroundColor: '#fff', 
-                  color: '#333', 
+                  color: '#000000', 
                   padding: '14px 32px', 
                   borderRadius: '12px', 
                   border: 'none', 
@@ -162,7 +162,7 @@ export default function Register() {
           <h2 style={{ 
             marginBottom: '8px', 
             textAlign: 'center',
-            color: '#333',
+            color: '#000000',
             fontSize: '24px',
             fontWeight: '600'
           }}>
@@ -178,7 +178,7 @@ export default function Register() {
           </p>
           
           <div style={{ 
-            backgroundColor: '#333', 
+            backgroundColor: '#000000', 
             borderRadius: '16px', 
             padding: '48px 24px', 
             textAlign: 'center',
@@ -220,7 +220,7 @@ export default function Register() {
                 onClick={handleKYC} 
                 style={{ 
                   backgroundColor: '#fff', 
-                  color: '#333', 
+                  color: '#000000', 
                   padding: '14px 32px', 
                   borderRadius: '12px', 
                   border: 'none', 
@@ -245,7 +245,7 @@ export default function Register() {
           <h2 style={{ 
             marginBottom: '8px', 
             textAlign: 'center',
-            color: '#333',
+            color: '#000000',
             fontSize: '24px',
             fontWeight: '600'
           }}>
@@ -273,7 +273,7 @@ export default function Register() {
                 <label style={{ 
                   display: 'block', 
                   marginBottom: '8px',
-                  color: '#333',
+                  color: '#000000',
                   fontSize: '14px',
                   fontWeight: '500'
                 }}>
@@ -290,7 +290,7 @@ export default function Register() {
                     borderRadius: '12px', 
                     border: '1px solid #e0e0e0', 
                     backgroundColor: '#f9f9f9', 
-                    color: '#333',
+                    color: '#000000',
                     fontSize: '16px',
                     boxSizing: 'border-box'
                   }}
@@ -301,7 +301,7 @@ export default function Register() {
                 <label style={{ 
                   display: 'block', 
                   marginBottom: '8px',
-                  color: '#333',
+                  color: '#000000',
                   fontSize: '14px',
                   fontWeight: '500'
                 }}>
@@ -318,7 +318,7 @@ export default function Register() {
                     borderRadius: '12px', 
                     border: '1px solid #e0e0e0', 
                     backgroundColor: '#f9f9f9', 
-                    color: '#333',
+                    color: '#000000',
                     fontSize: '16px',
                     boxSizing: 'border-box'
                   }}
@@ -329,7 +329,7 @@ export default function Register() {
                 <label style={{ 
                   display: 'block', 
                   marginBottom: '8px',
-                  color: '#333',
+                  color: '#000000',
                   fontSize: '14px',
                   fontWeight: '500'
                 }}>
@@ -346,7 +346,7 @@ export default function Register() {
                     borderRadius: '12px', 
                     border: '1px solid #e0e0e0', 
                     backgroundColor: '#f9f9f9', 
-                    color: '#333',
+                    color: '#000000',
                     fontSize: '16px',
                     boxSizing: 'border-box'
                   }}
@@ -357,7 +357,7 @@ export default function Register() {
                 type="submit"
                 disabled={loading}
                 style={{ 
-                  backgroundColor: '#333', 
+                  backgroundColor: '#000000', 
                   color: '#fff', 
                   padding: '16px 24px', 
                   borderRadius: '12px', 
@@ -394,7 +394,7 @@ export default function Register() {
             </div>
             <h2 style={{ 
               marginBottom: '16px',
-              color: '#333',
+              color: '#000000',
               fontSize: '24px',
               fontWeight: '600'
             }}>
@@ -410,7 +410,7 @@ export default function Register() {
             <button 
               onClick={() => router.push('/add-payment')}
               style={{ 
-                backgroundColor: '#333', 
+                backgroundColor: '#000000', 
                 color: '#fff', 
                 padding: '16px 32px', 
                 borderRadius: '12px', 

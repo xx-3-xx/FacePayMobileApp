@@ -1,26 +1,7 @@
-// import type { Metadata } from 'next'
-// import './globals.css'
-
-// export const metadata: Metadata = {
-//   title: 'Gaze & Go Payment System',
-//   description: 'Revolutionary payment system for MSMEs',
-// }
-
-// export default function RootLayout({
-//   children,
-// }: {
-//   children: React.ReactNode
-// }) {
-//   return (
-//     <html lang="en">
-//       <body>{children}</body>
-//     </html>
-//   )
-// }
-
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import NotificationManager from '@/components/NotificationManager'
 
 const inter = Inter({ subsets: ['latin'] })
 

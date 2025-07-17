@@ -292,7 +292,7 @@ export default function Main() {
                 ) : (
                   <>
                     <span>↓</span>
-                    <span>Show All Cards ({paymentMethods.length})</span>
+                    <span>Show All Payment Methods({paymentMethods.length})</span>
                   </>
                 )}
               </div>
@@ -322,7 +322,7 @@ export default function Main() {
         }}
       >
         <span style={{ fontSize: '20px' }}>+</span>
-        <span>Add New Card</span>
+        <span>Add New Payment Method</span>
       </div>
     </div>
   )
