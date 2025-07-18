@@ -26,7 +26,7 @@ export default function Main() {
       { id: 1752680977859, type: 'visa', isDefault: true },
       { id: 1752681619070, type: 'bank', isDefault: false },
       { id: 1752681627188, type: 'mastercard', isDefault: false },
-      { id: 1752681627180, type: 'touchngo', isDefault: false },
+      { id: 1752681627180, type: 'tngo', isDefault: false },
 
     ];
 
