@@ -129,6 +129,7 @@ cd facepay-msme
 pnpm install
 pnpm dev
 # Visit https://localhost:4000
+```
 
 ### 📱 FacePay Mobile App (Consumer)
 
@@ -138,4 +139,5 @@ cd FacePayMobileApp
 npm install
 npm run dev
 # Visit https://localhost:3000
+```
 
