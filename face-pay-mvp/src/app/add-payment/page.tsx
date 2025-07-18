@@ -41,7 +41,7 @@ export default function AddPayment() {
   if (success) {
     return (
       <div style={{ 
-        backgroundColor: '#f5f5f5', 
+        backgroundColor: '#ffffff', 
         minHeight: '100vh', 
         fontFamily: 'system-ui, -apple-system, sans-serif',
         display: 'flex',
@@ -82,7 +82,7 @@ export default function AddPayment() {
   if (loading) {
     return (
       <div style={{ 
-        backgroundColor: '#f5f5f5', 
+        backgroundColor: '#ffffff', 
         minHeight: '100vh', 
         fontFamily: 'system-ui, -apple-system, sans-serif',
         display: 'flex',
@@ -123,7 +123,7 @@ export default function AddPayment() {
 
   return (
     <div style={{ 
-      backgroundColor: '#f5f5f5', 
+      backgroundColor: '#ffffff', 
       minHeight: '100vh', 
       fontFamily: 'system-ui, -apple-system, sans-serif' 
     }}>
@@ -133,7 +133,7 @@ export default function AddPayment() {
         justifyContent: 'space-between', 
         alignItems: 'center', 
         padding: '20px 16px', 
-        backgroundColor: '#fff',
+        backgroundColor: '#ffffff',
         borderBottom: '1px solid #e0e0e0'
       }}>
         <button 
@@ -188,7 +188,7 @@ export default function AddPayment() {
               key={method.id}
               onClick={() => setSelectedMethod(method.id)}
               style={{
-                backgroundColor: '#fff',
+                backgroundColor: '#ffffff',
                 border: selectedMethod === method.id ? '2px solid #333' : '1px solid #e0e0e0',
                 borderRadius: '16px',
                 padding: '20px',
@@ -208,7 +208,7 @@ export default function AddPayment() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                backgroundColor: '#f9f9f9',
+                backgroundColor: '#ffffff',
                 borderRadius: '12px'
               }}>
                 {method.icon}
