@@ -126,16 +126,18 @@ export default function Card3D({
     transform: 'translateZ(4px)'
   }
 
-  const getBrandIcon = (brand: string) => {
+   const getPaymentLogo = (brand: string) => {
     switch (brand.toLowerCase()) {
       case 'visa':
-        return '💳'
+        return 'https://logos-world.net/wp-content/uploads/2020/06/Visa-Logo-1992.png'
       case 'mastercard':
-        return '💳'
+        return 'https://www.kredmo.com.au/wp-content/uploads/2019/01/Mastercard_logo-white.png'
       case 'amex':
-        return '💳'
+        return 'https://ucarecdn.com/a3b3a6d6-175f-493b-8128-6b927f0c79e3/'
       case 'bank':
-        return '🏦'
+        return 'https://1000logos.net/wp-content/uploads/2020/04/Logo-Maybank.jpg'
+      case 'tngo':
+        return 'https://logowik.com/content/uploads/images/touch-n-go-payments9542.logowik.com.webp'
       default:
         return '💳'
     }
@@ -174,9 +176,17 @@ export default function Card3D({
       }} />
 
       {/* Chip */}
+      {/*<div style={chipStyle}>*/}
+      {/*  {getBrandIcon(brand)}*/}
+      {/*</div>*/}
       <div style={chipStyle}>
-        {getBrandIcon(brand)}
+        <img
+            src={getPaymentLogo(brand)}
+            alt={brand}
+            style={{ width: '40px', height: '25px', objectFit: 'cover' }}
+        />
       </div>
+
 
       {/* Card Brand */}
       <div style={{
