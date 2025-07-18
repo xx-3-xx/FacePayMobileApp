@@ -20,15 +20,16 @@ export default function Home() {
     checkRegistration()
   }, [])
 
-  // useEffect(() => {
-  //   if (!loading) {
-  //     if (isRegistered) {
-  //       router.push('/main')
-  //     } else {
-  //       router.push('/register')
-  //     }
-  //   }
-  // }, [loading, isRegistered, router])
+  useEffect(() => {
+    if (!loading) {
+      if (isRegistered) {
+        router.push('/main')
+      } else {
+        router.push('/register')
+      }
+    }
+  }, [loading, isRegistered, router])
+  
   useEffect(() => {
   if (!loading) {
     console.log("Redirecting to:", isRegistered ? '/main' : '/register')

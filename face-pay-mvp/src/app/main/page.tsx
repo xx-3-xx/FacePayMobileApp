@@ -10,15 +10,27 @@ interface PaymentMethod {
 }
 
 export default function Main() {
-  const [userName, setUserName] = useState('')
+  const [userName, setUserName] = useState('LOW LIANA')
   const [paymentMethods, setPaymentMethods] = useState<PaymentMethod[]>([])
   const [cardsExpanded, setCardsExpanded] = useState(false)
   const router = useRouter()
 
   useEffect(() => {
-    const name = localStorage.getItem('userName') || 'User'
-    setUserName(name)
-    const methods = JSON.parse(localStorage.getItem('paymentMethods') || '[]')
+    // const name = localStorage.getItem('userName') || 'User'
+    // setUserName(name)
+    setUserName('LOW LIANA') // Hardcoded for demo purposes
+
+    // const methods = JSON.parse(localStorage.getItem('paymentMethods') || '[]')
+    // Mock payment methods
+    const methods = [
+      { id: 1752680977859, type: 'visa', isDefault: true },
+      { id: 1752681619070, type: 'bank', isDefault: false },
+      { id: 1752681627188, type: 'mastercard', isDefault: false },
+      { id: 1752681627180, type: 'touchngo', isDefault: false },
+
+    ];
+
+    console.log('Loaded payment methods:', methods)
     setPaymentMethods(methods)
   }, [])
 
