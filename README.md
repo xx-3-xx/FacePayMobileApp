@@ -1,5 +1,5 @@
 # FacePay – AI-Powered Facial Recognition Payment Platform
-![Alt text](face-pay-mvp\public\images\facePay.jpg)
+![Alt text](.\public\images\facePay.jpg)
 
 ## Important Links
 - [View the Source Code of FacePay Mobile App on GitHub](https://github.com/xx-3-xx/FacePayMobileApp)
