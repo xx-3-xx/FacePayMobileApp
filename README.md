@@ -1,6 +1,6 @@
 # 🧠 FacePay – AI-Powered Facial Recognition Payment Platform
 
-![FacePay Overview](https://raw.githubusercontent.com/xx-3-xx/FacePayMobileApp/main/public/images/facePay.jpg)
+![FacePay Overview](https://raw.githubusercontent.com/xx-3-xx/FacePayMobileApp/refs/heads/main/face-pay-mvp/public/images/facePay.jpg)
 
 A contactless payment system using on-device facial recognition — secure, private, and built for MSMEs.
 
