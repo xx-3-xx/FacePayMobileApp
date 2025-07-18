@@ -1,68 +1,78 @@
-# FacePay – AI-Powered Facial Recognition Payment Platform
-![FacePay Overview](https://raw.githubusercontent.com/xx-3-xx/FacePayMobileApp/refs/heads/main/face-pay-mvp/public/images/facePay.jpg)
+# 🧠 FacePay – AI-Powered Facial Recognition Payment Platform
 
-## Important Links
-- [View the Source Code of FacePay Mobile App on GitHub](https://github.com/xx-3-xx/FacePayMobileApp)
-- [View the Source Code of FacePay Merchant Web Portal on GitHub](https://github.com/xx-3-xx/FacePayMobileApp)
+![FacePay Overview](https://raw.githubusercontent.com/xx-3-xx/FacePayMobileApp/main/public/images/facePay.jpg)
 
-Why It's Critical
------------------
-FacePay solves a pressing need for **secure, touchless, and frictionless payments** by enabling **on-device facial recognition** that is private by design. Built specifically for **MSMEs**, it brings enterprise-grade biometric payment technology to small businesses at an accessible price point.
+A contactless payment system using on-device facial recognition — secure, private, and built for MSMEs.
 
-
-- 🧾 **Merchant Web Portal** – For MSMEs to onboard, manage business profiles, and accept payments
-- 📱 **Mobile App** – For consumers to authenticate identity and make payments using face recognition
-
-
-How It Works
-------------
-# Tech Stack for FacePay Merchant Web Portal
-
-| Layer      | Technology                   |
-| ---------- | ---------------------------- |
-| Frontend   | React Native, Tailwind CSS,  |
-| Backend    | Flask (Python), Firebase     |
-| AI Models  | Python, ResNet100, MediaPipe |
-| Deployment | AWS, Docker                  |
 ---
 
-## Tech Stack for FacePay Mobile App
+## 🔗 Important Links
 
-| Layer       | Technologies |
-|-------------|--------------|
-| Frontend    | **Next.js**, **React**, **Tailwind CSS**, **Framer Motion** |
-| Facial Recognition | **MediaPipe Tasks Vision**, **TensorFlow.js**, **Face Landmarks Detection** |
-| Webcam Access | `react-webcam` |
-| Notifications | `web-push`, Push API |
-| Local SSL (Dev) | `mkcert` for self-signed HTTPS |
-| Backend (optional) | Node.js, Express (for HTTPS server) |
+- [🛒 FacePay Merchant Web Portal](https://github.com/thanir03/facepay-msme)
+- [📱 FacePay Mobile App (Consumer)](https://github.com/xx-3-xx/FacePayMobileApp)
+
 ---
 
-## Key Features
+## 🔥 Why It’s Critical
 
-### 🧾 FacePayMerchant (Merchant Portal)
+FacePay solves a pressing need for **secure, touchless, and frictionless payments** by enabling **on-device facial recognition** that is private by design. Built for **MSMEs**, it brings biometric payment tech to businesses of any size.
 
-| Feature                           | Description                                                                 |
-|-----------------------------------|-----------------------------------------------------------------------------|
-| **Real-Time Face Authentication** | Uses MediaPipe & TensorFlow.js to perform fast, secure facial recognition on-device. |
-| **Webcam Integration**            | Accesses the user's device camera via `react-webcam` with fallback logic.   |
-| **Merchant Onboarding**           | Simple UI for MSMEs to register, configure, and activate FacePay services. |
-| **Transaction Analytics**         | View real-time transaction volumes, customer data, and usage history.      |
+---
 
-### 📱 FacePayMobileApp (Consumer)
+## ⚙️ How It Works
 
-| Feature                           | Description                                                                 |
-|-----------------------------------|-----------------------------------------------------------------------------|
-| **Real-Time Face Authentication** | Uses MediaPipe & TensorFlow.js to perform fast, secure facial recognition on-device. |
-| **Webcam Integration**            | Accesses the user's device camera via `react-webcam` with fallback logic.   |
-| **3D Card Display UI**            | Smooth and modern visual card representation using `framer-motion`.        |
-| **Local Data Storage**            | Stores non-sensitive user data and preferences locally for performance.     |
-| **Privacy-First Architecture**    | All facial detection is performed on-device, with zero facial image uploads. |
+- 🧾 **Merchant Web Portal** – MSMEs register, manage profiles, and receive payments
+- 📱 **Mobile App** – Consumers authenticate and pay using facial biometrics
+- 🔒 **All facial data stays on-device**; no cloud-based image storage
+
+---
+
+## 🧱 Tech Stack
+
+### Merchant Web Portal
+
+| Layer         | Technology                              |
+|---------------|------------------------------------------|
+| Frontend      | Next.js, Tailwind CSS                    |
+| Backend       | Flask (Python), Firebase                 |
+| AI Models     | Python, MediaPipe, ResNet100             |
+| Deployment    | Docker, AWS                              |
+
+### Mobile App (Consumer)
+
+| Layer         | Technology                              |
+|---------------|------------------------------------------|
+| Frontend      | Next.js, React, Framer Motion            |
+| AI & CV       | TensorFlow.js, MediaPipe, FaceMesh       |
+| Webcam Access | `react-webcam`                           |
+| Local SSL     | `mkcert` for dev HTTPS                   |
+
+---
+
+## ✨ Key Features
+
+### 📱 Consumer App
+
+| Feature                    | Description                                          |
+|----------------------------|------------------------------------------------------|
+| Face Recognition           | Fast, local facial match using MediaPipe + TF.js    |
+| 3D Card UI                 | Interactive card design using `framer-motion`       |
+| Local Data Storage         | Saves preferences without external calls            |
+| Privacy-First Architecture| No facial images leave the device                   |
+
+### 🧾 Merchant Portal
+
+| Feature                    | Description                                          |
+|----------------------------|------------------------------------------------------|
+| Merchant Onboarding        | Easy registration & setup                           |
+| Real-Time Transactions     | View face-auth payments in real-time                |
+| Analytics Dashboard        | Track volumes, history, and referral data           |
+
 ---
 
 ## 💼 Business Model
 
-Our monetization is based on a **tiered subscription model** tailored to MSME needs:
+A **tiered subscription model** to support MSMEs at every growth stage:
 
 | Plan    | Monthly Fee | Free Transaction Volume | Excess Fee |
 |---------|-------------|--------------------------|------------|
@@ -70,151 +80,62 @@ Our monetization is based on a **tiered subscription model** tailored to MSME ne
 | Growth  | RM99        | RM30,000                 | 2.0%       |
 | Pro     | RM299       | RM100,000                | 2.0%       |
 
-> 💳 Beyond the free transaction volume, a flat 2.0% fee is applied.
+> 💳 Flat 2.0% fee for usage beyond quota.
+
+---
+
+## 📈 ROI – Return on Investment
+
+- ⏱ Cut checkout time by up to **70%**
+- 🔒 Reduce fraud with biometric validation
+- 🧠 Enable repeat payments with ease
+- 📉 Lower staff dependency and operational costs
+
+---
+
+## 🛣 Roadmap
+
+- ✅ v1.0 – MVP with local face match & payment interface
+- 🔜 v1.1 – Anti-spoofing (liveness detection)
+- 🔜 v1.2 – Merchant analytics + real-time insights
+- 🔜 v2.0 – Cross-device sync, multi-merchant access
+- 🔐 Future – Decentralized identity with blockchain
 
 ---
 
 ## 🤝 Referral Program
 
-To accelerate adoption, we offer a **referral program**:
-
-- ✅ Merchants and consumers can invite others via referral links or codes
-- 🎁 Earn discounts, bonus transaction credits, or cash rewards
-- 🧾 Rewards are automatically applied once referrals complete onboarding
+Refer a friend — you both get **RM150 credit** after setup.
 
 ---
 
-Why It's a Win
---------------
-- **Fast Checkout**: Face recognition speeds up transactions.
-- **Private by Design**: No facial data leaves the device.
-- **Built for MSMEs**: Advanced tech at an affordable price.
-- **Works Everywhere**: Mobile and web-ready by default.
-- **Scalable**: From small shops to large chains.
-- **Cost-Effective**: Pay as your business grows.
+## 🏆 Why It’s a Win
 
-Get Started for FacePay Merchant Web Portal
------------
-Welcome! Here's how to get both the *MSME Merchant App* and the *Consumer App* up and running locally.
+- ⚡ Fast Checkout – biometric match in seconds
+- 🔐 Privacy by Design – zero facial data uploaded
+- 💸 MSME Ready – affordable and scalable
+- 🌐 Web & Mobile – seamless integration
+- 📊 Scalable – supports retail, F&B, and services
 
 ---
 
-### Run FacePay MSME Mobile Application
+## 🚀 Get Started
 
-1. *Clone Repository*:
-
-   
-   git clone https://github.com/thanir03/facepay-msme.git
-   
-
-2. *Install Dependencies*:
-
-   
-   pnpm install
-   
-
-3. *Run FacePay MSME App*:
-
-   
-   pnpm dev
-   
-
-4. *Open app at https://localhost:4000*
-
----
-
-### Run FacePay Consumer Mobile Application
-
-1. *Clone Repository*:
-
-   
-   git clone https://github.com/xx-3-xx/FacePayMobileApp
-   
-
-2. *Install Dependencies*:
-
-   
-   pnpm install
-   
-
-3. *Run FacePay Consumer App*:
-
-   
-   pnpm dev
-   
-
-4. *Open app at https://localhost:3000*
-
----
-
-Get Started for FacePay Mobile App
------------
-
-## 🧪 Local Development Setup
-
-### ✅ Requirements
-
-- Node.js 18+
-- npm 9+
-- Git
-- Chrome or Edge browser (for webcam & push API testing)
-- [mkcert](https://github.com/FiloSottile/mkcert) for local HTTPS (optional but recommended)
-
----
-
-## 📱 FacePayMobileApp – Setup Instructions
-
-Clone and enter the mobile app repo:
+### 🧾 FacePay Merchant Web Portal
 
 ```bash
-git clone https://github.com/your-org/FacePayMobileApp.git
+git clone https://github.com/thanir03/facepay-msme
+cd facepay-msme
+pnpm install
+pnpm dev
+# Visit https://localhost:4000
+
+### 📱 FacePay Mobile App (Consumer)
+
+```bash
+git clone https://github.com/xx-3-xx/FacePayMobileApp
 cd FacePayMobileApp
+npm install
+npm run dev
+# Visit https://localhost:3000
 
-
-## 🔒 Security Considerations
-
-### Access Control
-
-- Face authentication must be tied to verified user accounts via eKYC (MyKad, passport, etc.).
-- Only authorized merchants/devices can initiate face scan requests.
-- Secure device registration to prevent rogue POS terminals.
-
-### Biometric Security
-
-- Use anti-spoofing (liveness detection) techniques to prevent replay or photo attacks.
-- Facial embeddings are generated on-device and verified securely.
-- Check more than 100+ facial points to verify user.
-- No raw facial images are stored post-verification.
-
-### Data Integrity
-
-- Face match and transaction logs are signed and timestamped to ensure auditability.
-- Device-to-server communication uses HTTPS with mutual TLS (mTLS) for integrity.
-
-### Privacy
-
-- Facial data is hashed and stored securely using encryption-at-rest (AES-256).
-- Personally identifiable information (PII) is minimized and stored in vault services
-- Only authorized services can access facial embeddings through scoped tokens.
-
-### Payment Authorization
-
-- Face match alone is not sufficient; Biometric reconfirmation is required for large transactions.
-- Users are notified in real-time for each face-based payment.
-
-### Device Security
-
-- Edge devices (camera-enabled POS systems) are locked down with kiosk mode and remote kill switch.
-- Software updates are signed and enforced via OTA firmware controls.
-- Device tamper detection and logging are in place.
-
-### Compliance
-
-- Follows PDPA (Malaysia), GDPR (EU), and other relevant biometric privacy laws.
-- User consent is mandatory before enrollment and each biometric transaction.
-- Regular external security audits and penetration testing are conducted.
-
-# Contact and Support
-
-- *GitHub*: Report issues at <https://github.com/thanir03/facepay-msme>.
-- *Email*: Contact <2003thanir10@gmail.com> for inquiries.
