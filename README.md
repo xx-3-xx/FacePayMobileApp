@@ -16,8 +16,17 @@ FacePay solves a pressing need for **secure, touchless, and frictionless payment
 
 How It Works
 ------------
+# Tech Stack for FacePay Merchant Web Portal
 
-## 🛠 Tech Stack
+| Layer      | Technology                   |
+| ---------- | ---------------------------- |
+| Frontend   | React Native, Tailwind CSS,  |
+| Backend    | Flask (Python), Firebase     |
+| AI Models  | Python, ResNet100, MediaPipe |
+| Deployment | AWS, Docker                  |
+---
+
+## Tech Stack for FacePay Mobile App
 
 | Layer       | Technologies |
 |-------------|--------------|
@@ -27,7 +36,6 @@ How It Works
 | Notifications | `web-push`, Push API |
 | Local SSL (Dev) | `mkcert` for self-signed HTTPS |
 | Backend (optional) | Node.js, Express (for HTTPS server) |
-
 ---
 
 ## Key Features
@@ -78,12 +86,66 @@ To accelerate adoption, we offer a **referral program**:
 
 Why It's a Win
 --------------
--   **Tackles Food Waste**: Helps reduce the 1.3 billion tons of global food waste by optimizing stock.
--   **Prevents Shortages**: Ensures you're always ready for demand.
--   **Smarter Decisions**: Quick BI dashboards and Smart Q's data analysis provide clear, actionable insights.
--   **Automation**: Saves time with automated restocking and inventory tracking.
--   **Cost Savings**: Cuts waste and optimizes stock, with our subscription tied to your savings.
+- **Fast Checkout**: Face recognition speeds up transactions.
+- **Private by Design**: No facial data leaves the device.
+- **Built for MSMEs**: Advanced tech at an affordable price.
+- **Works Everywhere**: Mobile and web-ready by default.
+- **Scalable**: From small shops to large chains.
+- **Cost-Effective**: Pay as your business grows.
 
+Get Started for FacePay Merchant Web Portal
+-----------
+Welcome! Here's how to get both the *MSME Merchant App* and the *Consumer App* up and running locally.
+
+---
+
+### Run FacePay MSME Mobile Application
+
+1. *Clone Repository*:
+
+   
+   git clone https://github.com/thanir03/facepay-msme.git
+   
+
+2. *Install Dependencies*:
+
+   
+   pnpm install
+   
+
+3. *Run FacePay MSME App*:
+
+   
+   pnpm dev
+   
+
+4. *Open app at https://localhost:4000*
+
+---
+
+### Run FacePay Consumer Mobile Application
+
+1. *Clone Repository*:
+
+   
+   git clone https://github.com/xx-3-xx/FacePayMobileApp
+   
+
+2. *Install Dependencies*:
+
+   
+   pnpm install
+   
+
+3. *Run FacePay Consumer App*:
+
+   
+   pnpm dev
+   
+
+4. *Open app at https://localhost:3000*
+
+---
 
 Get Started for FacePay Mobile App
 -----------
@@ -108,3 +170,51 @@ Clone and enter the mobile app repo:
 git clone https://github.com/your-org/FacePayMobileApp.git
 cd FacePayMobileApp
 
+
+## 🔒 Security Considerations
+
+### Access Control
+
+- Face authentication must be tied to verified user accounts via eKYC (MyKad, passport, etc.).
+- Only authorized merchants/devices can initiate face scan requests.
+- Secure device registration to prevent rogue POS terminals.
+
+### Biometric Security
+
+- Use anti-spoofing (liveness detection) techniques to prevent replay or photo attacks.
+- Facial embeddings are generated on-device and verified securely.
+- Check more than 100+ facial points to verify user.
+- No raw facial images are stored post-verification.
+
+### Data Integrity
+
+- Face match and transaction logs are signed and timestamped to ensure auditability.
+- Device-to-server communication uses HTTPS with mutual TLS (mTLS) for integrity.
+
+### Privacy
+
+- Facial data is hashed and stored securely using encryption-at-rest (AES-256).
+- Personally identifiable information (PII) is minimized and stored in vault services
+- Only authorized services can access facial embeddings through scoped tokens.
+
+### Payment Authorization
+
+- Face match alone is not sufficient; Biometric reconfirmation is required for large transactions.
+- Users are notified in real-time for each face-based payment.
+
+### Device Security
+
+- Edge devices (camera-enabled POS systems) are locked down with kiosk mode and remote kill switch.
+- Software updates are signed and enforced via OTA firmware controls.
+- Device tamper detection and logging are in place.
+
+### Compliance
+
+- Follows PDPA (Malaysia), GDPR (EU), and other relevant biometric privacy laws.
+- User consent is mandatory before enrollment and each biometric transaction.
+- Regular external security audits and penetration testing are conducted.
+
+# Contact and Support
+
+- *GitHub*: Report issues at <https://github.com/thanir03/facepay-msme>.
+- *Email*: Contact <2003thanir10@gmail.com> for inquiries.
