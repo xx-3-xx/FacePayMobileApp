@@ -100,7 +100,10 @@ A **tiered subscription model** to support MSMEs at every growth stage:
 - 🔜 v1.2 – Merchant analytics + real-time insights
 - 🔜 v2.0 – Cross-device sync, multi-merchant access
 - 🔐 Future – Decentralized identity with blockchain
+---
 
+  <img width="1920" height="1080" alt="Green and Black Modern Roadmap Timeline Brainstorm" src="https://github.com/user-attachments/assets/c35096ac-b6a2-4ea3-b031-c680e8e271e7" />
+  
 ---
 
 ## 🤝 Referral Program
