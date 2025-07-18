@@ -12,7 +12,8 @@ export default function AddPayment() {
   const paymentMethods = [
     { id: 'visa', name: 'Visa Card', icon: '💳', description: 'Add your Visa card' },
     { id: 'bank', name: 'Bank Account', icon: '🏦', description: 'Link your bank account' },
-    { id: 'mastercard', name: 'Mastercard', icon: '💳', description: 'Add your Mastercard' }
+    { id: 'mastercard', name: 'Mastercard', icon: '💳', description: 'Add your Mastercard' },
+    { id: 'tng-ewallet', name: 'Touch n Go eWallet', icon: '💸', description: 'Link your Touch n Go eWallet account' }
   ]
 
   const handleAdd = () => {
