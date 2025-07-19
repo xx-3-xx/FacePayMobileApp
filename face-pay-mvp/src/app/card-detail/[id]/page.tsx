@@ -30,104 +30,386 @@ export default function CardDetail() {
   const params = useParams()
 
   useEffect(() => {
-    const name = localStorage.getItem('userName') || 'User'
-    setUserName(name)
+    // const name = localStorage.getItem('userName') || 'User'
+    // setUserName(name)
+    setUserName('LOW LIANA');
+
+    // const methods = JSON.parse(localStorage.getItem('paymentMethods') || '[]')
+    // setPaymentMethods(methods)
     
-    const methods = JSON.parse(localStorage.getItem('paymentMethods') || '[]')
+    // Mock payment methods with specific IDs
+    const methods = [
+      { id: 1752680977859, type: 'visa', isDefault: true },
+      { id: 1752681619070, type: 'bank', isDefault: false },
+      { id: 1752681627188, type: 'mastercard', isDefault: false }
+    ]
+    
     setPaymentMethods(methods)
-    
+
     // Find current card
     const cardId = parseInt(params.id as string)
     const card = methods.find((method: PaymentMethod) => method.id === cardId)
     setCurrentCard(card || null)
     
-    // Generate mock transactions
-    const mockTransactions: Transaction[] = [
-      {
-        id: '1',
-        merchant: 'Grocery Store',
-        amount: -45.67,
-        date: '2025-07-17',
-        time: '10:30 AM',
-        status: 'completed',
-        category: 'Food',
-        icon: '🛒'
-      },
-      {
-        id: '2',
-        merchant: 'Gas Station',
-        amount: -32.00,
-        date: '2025-07-16',
-        time: '08:15 AM',
-        status: 'completed',
-        category: 'Transport',
-        icon: '⛽'
-      },
-      {
-        id: '3',
-        merchant: 'Coffee Shop',
-        amount: -8.50,
-        date: '2025-07-16',
-        time: '07:45 AM',
-        status: 'completed',
-        category: 'Food',
-        icon: '☕'
-      },
-      {
-        id: '4',
-        merchant: 'Online Store',
-        amount: -89.99,
-        date: '2025-07-15',
-        time: '02:20 PM',
-        status: 'completed',
-        category: 'Shopping',
-        icon: '📦'
-      },
-      {
-        id: '5',
-        merchant: 'Pharmacy',
-        amount: -24.30,
-        date: '2025-07-15',
-        time: '11:00 AM',
-        status: 'completed',
-        category: 'Health',
-        icon: '💊'
-      },
-      {
-        id: '6',
-        merchant: 'Restaurant',
-        amount: -56.80,
-        date: '2025-07-14',
-        time: '07:30 PM',
-        status: 'completed',
-        category: 'Food',
-        icon: '🍽️'
-      },
-      {
-        id: '7',
-        merchant: 'Parking Fee',
-        amount: -5.00,
-        date: '2025-07-14',
-        time: '02:00 PM',
-        status: 'completed',
-        category: 'Transport',
-        icon: '🅿️'
-      },
-      {
-        id: '8',
-        merchant: 'Salary Deposit',
-        amount: 2500.00,
-        date: '2025-07-13',
-        time: '09:00 AM',
-        status: 'completed',
-        category: 'Income',
-        icon: '💰'
+    // Generate different mock transactions based on card ID
+    const getTransactionsForCard = (cardId: number): Transaction[] => {
+      if (cardId === 1752680977859) {
+        return [
+          {
+            id: '1',
+            merchant: 'Amazon Purchase',
+            amount: -127.45,
+            date: '2025-07-18',
+            time: '02:15 PM',
+            status: 'completed',
+            category: 'Shopping',
+            icon: '📦'
+          },
+          {
+            id: '2',
+            merchant: 'Starbucks Coffee',
+            amount: -12.50,
+            date: '2025-07-18',
+            time: '08:30 AM',
+            status: 'completed',
+            category: 'Food',
+            icon: '☕'
+          },
+          {
+            id: '3',
+            merchant: 'Shell Gas Station',
+            amount: -45.80,
+            date: '2025-07-17',
+            time: '06:45 PM',
+            status: 'completed',
+            category: 'Transport',
+            icon: '⛽'
+          },
+          {
+            id: '4',
+            merchant: 'Netflix Subscription',
+            amount: -15.99,
+            date: '2025-07-17',
+            time: '12:00 PM',
+            status: 'completed',
+            category: 'Entertainment',
+            icon: '🎬'
+          },
+          {
+            id: '5',
+            merchant: 'Whole Foods Market',
+            amount: -89.32,
+            date: '2025-07-16',
+            time: '05:20 PM',
+            status: 'completed',
+            category: 'Food',
+            icon: '🛒'
+          },
+          {
+            id: '6',
+            merchant: 'Uber Ride',
+            amount: -18.75,
+            date: '2025-07-16',
+            time: '09:15 AM',
+            status: 'completed',
+            category: 'Transport',
+            icon: '🚗'
+          },
+          {
+            id: '7',
+            merchant: 'Apple Store',
+            amount: -199.00,
+            date: '2025-07-15',
+            time: '03:30 PM',
+            status: 'completed',
+            category: 'Technology',
+            icon: '📱'
+          },
+          {
+            id: '8',
+            merchant: 'Salary Direct Deposit',
+            amount: 3200.00,
+            date: '2025-07-15',
+            time: '09:00 AM',
+            status: 'completed',
+            category: 'Income',
+            icon: '💰'
+          }
+        ]
+      } else if (cardId === 1752681619070) {
+        return [
+          {
+            id: '1',
+            merchant: 'Target Store',
+            amount: -67.23,
+            date: '2025-07-18',
+            time: '04:45 PM',
+            status: 'completed',
+            category: 'Shopping',
+            icon: '🎯'
+          },
+          {
+            id: '2',
+            merchant: 'McDonald\'s',
+            amount: -9.85,
+            date: '2025-07-18',
+            time: '12:30 PM',
+            status: 'completed',
+            category: 'Food',
+            icon: '🍟'
+          },
+          {
+            id: '3',
+            merchant: 'Metro Transit',
+            amount: -2.75,
+            date: '2025-07-18',
+            time: '07:45 AM',
+            status: 'completed',
+            category: 'Transport',
+            icon: '🚇'
+          },
+          {
+            id: '4',
+            merchant: 'CVS Pharmacy',
+            amount: -34.67,
+            date: '2025-07-17',
+            time: '11:20 AM',
+            status: 'completed',
+            category: 'Health',
+            icon: '💊'
+          },
+          {
+            id: '5',
+            merchant: 'Steam Games',
+            amount: -29.99,
+            date: '2025-07-16',
+            time: '10:15 PM',
+            status: 'completed',
+            category: 'Entertainment',
+            icon: '🎮'
+          },
+          {
+            id: '6',
+            merchant: 'Local Restaurant',
+            amount: -42.80,
+            date: '2025-07-16',
+            time: '07:30 PM',
+            status: 'completed',
+            category: 'Food',
+            icon: '🍽️'
+          },
+          {
+            id: '7',
+            merchant: 'Gym Membership',
+            amount: -49.99,
+            date: '2025-07-16',
+            time: '06:00 AM',
+            status: 'completed',
+            category: 'Health',
+            icon: '💪'
+          },
+          {
+            id: '8',
+            merchant: 'Freelance Payment',
+            amount: 850.00,
+            date: '2025-07-15',
+            time: '02:00 PM',
+            status: 'completed',
+            category: 'Income',
+            icon: '💼'
+          }
+        ]
+      } else if (cardId === 1752681627188) {
+        return [
+          {
+            id: '1',
+            merchant: 'Best Buy Electronics',
+            amount: -299.99,
+            date: '2025-07-18',
+            time: '03:20 PM',
+            status: 'completed',
+            category: 'Technology',
+            icon: '💻'
+          },
+          {
+            id: '2',
+            merchant: 'Hotel Booking',
+            amount: -185.50,
+            date: '2025-07-18',
+            time: '10:45 AM',
+            status: 'completed',
+            category: 'Travel',
+            icon: '🏨'
+          },
+          {
+            id: '3',
+            merchant: 'Fine Dining Restaurant',
+            amount: -78.90,
+            date: '2025-07-17',
+            time: '08:00 PM',
+            status: 'completed',
+            category: 'Food',
+            icon: '🥂'
+          },
+          {
+            id: '4',
+            merchant: 'Premium Car Wash',
+            amount: -35.00,
+            date: '2025-07-17',
+            time: '02:30 PM',
+            status: 'completed',
+            category: 'Services',
+            icon: '🚙'
+          },
+          {
+            id: '5',
+            merchant: 'Designer Store',
+            amount: -450.00,
+            date: '2025-07-16',
+            time: '04:15 PM',
+            status: 'completed',
+            category: 'Fashion',
+            icon: '👔'
+          },
+          {
+            id: '6',
+            merchant: 'Airport Lounge',
+            amount: -65.00,
+            date: '2025-07-16',
+            time: '06:30 AM',
+            status: 'completed',
+            category: 'Travel',
+            icon: '✈️'
+          },
+          {
+            id: '7',
+            merchant: 'Wine Store',
+            amount: -120.75,
+            date: '2025-07-15',
+            time: '05:45 PM',
+            status: 'completed',
+            category: 'Shopping',
+            icon: '🍷'
+          },
+          {
+            id: '8',
+            merchant: 'Investment Return',
+            amount: 1200.00,
+            date: '2025-07-15',
+            time: '11:30 AM',
+            status: 'completed',
+            category: 'Income',
+            icon: '📈'
+          }
+        ]
+      } else {
+        // Default transactions for any other card ID
+        return [
+          {
+            id: '1',
+            merchant: 'Unknown Merchant',
+            amount: -50.00,
+            date: '2025-07-18',
+            time: '12:00 PM',
+            status: 'completed',
+            category: 'Other',
+            icon: '❓'
+          }
+        ]
       }
-    ]
+    }
     
-    setTransactions(mockTransactions)
+    setTransactions(getTransactionsForCard(cardId))
     setLoading(false)
   }, [params.id])
+
+  //   // Generate mock transactions
+  //   const mockTransactions: Transaction[] = [
+  //     {
+  //       id: '1',
+  //       merchant: 'Grocery Store',
+  //       amount: -45.67,
+  //       date: '2025-07-17',
+  //       time: '10:30 AM',
+  //       status: 'completed',
+  //       category: 'Food',
+  //       icon: '🛒'
+  //     },
+  //     {
+  //       id: '2',
+  //       merchant: 'Gas Station',
+  //       amount: -32.00,
+  //       date: '2025-07-16',
+  //       time: '08:15 AM',
+  //       status: 'completed',
+  //       category: 'Transport',
+  //       icon: '⛽'
+  //     },
+  //     {
+  //       id: '3',
+  //       merchant: 'Coffee Shop',
+  //       amount: -8.50,
+  //       date: '2025-07-16',
+  //       time: '07:45 AM',
+  //       status: 'completed',
+  //       category: 'Food',
+  //       icon: '☕'
+  //     },
+  //     {
+  //       id: '4',
+  //       merchant: 'Online Store',
+  //       amount: -89.99,
+  //       date: '2025-07-15',
+  //       time: '02:20 PM',
+  //       status: 'completed',
+  //       category: 'Shopping',
+  //       icon: '📦'
+  //     },
+  //     {
+  //       id: '5',
+  //       merchant: 'Pharmacy',
+  //       amount: -24.30,
+  //       date: '2025-07-15',
+  //       time: '11:00 AM',
+  //       status: 'completed',
+  //       category: 'Health',
+  //       icon: '💊'
+  //     },
+  //     {
+  //       id: '6',
+  //       merchant: 'Restaurant',
+  //       amount: -56.80,
+  //       date: '2025-07-14',
+  //       time: '07:30 PM',
+  //       status: 'completed',
+  //       category: 'Food',
+  //       icon: '🍽️'
+  //     },
+  //     {
+  //       id: '7',
+  //       merchant: 'Parking Fee',
+  //       amount: -5.00,
+  //       date: '2025-07-14',
+  //       time: '02:00 PM',
+  //       status: 'completed',
+  //       category: 'Transport',
+  //       icon: '🅿️'
+  //     },
+  //     {
+  //       id: '8',
+  //       merchant: 'Salary Deposit',
+  //       amount: 2500.00,
+  //       date: '2025-07-13',
+  //       time: '09:00 AM',
+  //       status: 'completed',
+  //       category: 'Income',
+  //       icon: '💰'
+  //     }
+  //   ]
+    
+  //   setTransactions(mockTransactions)
+  //   setLoading(false)
+  // }, [params.id])
 
   const getCardDetails = (type: string, index: number) => {
     const last4 = `${1000 + index}`.slice(-4)
